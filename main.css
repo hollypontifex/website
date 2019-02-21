@@ -1,0 +1,14 @@
+.navbar-nav > li{
+    padding-left:30px;
+    padding-right:30px;
+  }
+
+nav .navbar-nav li a{
+    color: pink;
+}
+
+nav .navbar-brand{
+    color: #ffa8b7 !important;
+    font-size: 48px !important;
+    font-family: "Brush Script MT", cursive !important;
+}

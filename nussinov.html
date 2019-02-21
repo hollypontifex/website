@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Nussinov Algorithm</title>
+    <script src="nussinov.js"></script>
+    <script src=https://cdnjs.cloudflare.com/ajax/libs/mathjs/3.3.0/math.min.js></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <link href="seq.css" rel="stylesheet">
+</head>
+
+<script>
+    function clear(){
+        var cont = $('#cont');
+        var resultContainer = $('#result');
+        var minLoopLength = parseInt($('#minLoopLength').val());
+        var seq = $('#seq').val();
+        nussinov.rebuildTable(cont, resultContainer, minLoopLength, seq);
+    }
+    $(document).ready(function(){
+        clear();
+        
+        $('.seq').keyup(function(){
+            clear();
+        });
+    
+        $('.params').change(function(){
+            clear();
+        });
+    });
+    </script>
+<body>
+    <table>
+        <tr>
+            <td><label>RNA Sequence:</label></td>
+            <td colspan="4"><input id="seq" class='seq' value="GCACGACG" maxlength="20" /></label></td>
+            <td rowspan="10" id="result"></td>
+        </tr>
+        <tr colspan="4">
+            <th><label>Minimum Loop Length:</label></th>
+        </tr>
+        <tr>
+            <td><input class="params" id="minLoopLength" type="number" value="1" /></td>
+        </tr>
+        </table>    
+        <div id="cont"></div>
+</body>
+</html>
