@@ -2,25 +2,34 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>RNA to DNA</title>
-    <script src="rnaToDna.js"></script>
+    <title>DNA Strand Manipulation</title>
+    <script src="strandTools.js"></script>
     <script src=https://cdnjs.cloudflare.com/ajax/libs/mathjs/3.3.0/math.min.js></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-    <link href="seq.css" rel="stylesheet">
+    <link href="rnaSeq.css" rel="stylesheet">
 </head>
 
 <script>
-    function clear(){
-        var cont = $('#cont');
+    function toRNA(){
         var resultContainer = $('#result');
         var seq = $('#seq').val();
-        convertToRNA(cont, resultContainer, seq);
+        seq = convertToRNA(seq);
+        console.log(seq);
+        postResult(resultContainer, seq);
+    }
+    function reverseCompStrand(){
+        var resultContainer = $('#result');
+        var seq = $('#seq').val();
+        seq = reverseStrand(seq);
+        postResult(resultContainer, seq);
     }
     $(document).ready(function(){
-        clear();
-        
-        $('.seq').keyup(function(){
-            clear();
+
+        $('.btn-reverseComp').click(function(){
+            reverseCompStrand();
+        });
+        $('.btn-rna').click(function(){
+            toRNA();
         });
     });
     </script>
@@ -28,9 +37,17 @@
     <table>
         <tr>
             <td><label>DNA Sequence:</label></td>
-            <td colspan="4"><input id="seq" class='seq' value="GCACTTGACG" maxlength="20" /></label></td>
+            <td colspan="4"><input id="seq" class='seq' value="GCACTTGACG" maxlength="200" /></label></td>
+        </tr>
+        <td colspan="4">
+            <button class="btn-rna">Convert to RNA</button>
+            <button class="btn-reverseComp">Reverse Complement Strand</button>
+        </tr>
+        <tr>
+            <td><label>Results:</label></td>
             <td rowspan="10" id="result"></td>
         </tr>
+
         </table>    
         <div id="cont"></div>
 </body>
