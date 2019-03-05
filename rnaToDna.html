@@ -29,6 +29,12 @@
         seq = computeGCContent(seq);
         postResult(resultContainer, seq);
     }
+    function toProtein(){
+        var resultContainer = $('#result');
+        var seq = $('#seq').val();
+        seq = computeToProtein(seq);
+        postResult(resultContainer, seq);
+    }
     $(document).ready(function(){
 
         $('.btn-reverseComp').click(function(){
@@ -39,6 +45,9 @@
         });
         $('.btn-gcContent').click(function(){
             gcContent();
+        });
+        $('.btn-toProtein').click(function(){
+            toProtein();
         });
     });
     </script>
@@ -52,6 +61,7 @@
             <button class="btn-rna">Convert to RNA</button>
             <button class="btn-reverseComp">Reverse Complement Strand</button>
             <button class="btn-gcContent">Compute GC Content</button>
+            <button class="btn-toProtein">Convert to Protein</button>
         </tr>
         <tr>
             <td><label>Results:</label></td>
