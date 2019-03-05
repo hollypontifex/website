@@ -1,0 +1,21 @@
+#alignment {
+    min-width:25px;
+}
+
+label{
+    float:left;
+    margin-right:10px;
+}
+.seq {
+    width:500px;
+    float:left;
+    text-transform: uppercase;
+}
+
+.params{
+    width:70px;
+}
+
+#result{
+    padding-left:0px;
+}
