@@ -52,6 +52,20 @@ function complementStrand(seq){
     return compStrand;
 }
 
+function computeGCContent(seq){
+    var count = 0;
+    var percent = 0;
+    for(i=0; i<seq.length; i++)
+    {
+        if(seq[i]==='G' || seq[i]==='C')
+        {
+            count = count + 1;
+        }
+    }
+    percent = (count / seq.length) * 100 + '%';
+    return percent;
+}
+
 
 
 function postResult(resultsContainer, seq){

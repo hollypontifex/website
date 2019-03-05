@@ -23,6 +23,12 @@
         seq = reverseStrand(seq);
         postResult(resultContainer, seq);
     }
+    function gcContent(){
+        var resultContainer = $('#result');
+        var seq = $('#seq').val();
+        seq = computeGCContent(seq);
+        postResult(resultContainer, seq);
+    }
     $(document).ready(function(){
 
         $('.btn-reverseComp').click(function(){
@@ -30,6 +36,9 @@
         });
         $('.btn-rna').click(function(){
             toRNA();
+        });
+        $('.btn-gcContent').click(function(){
+            gcContent();
         });
     });
     </script>
@@ -42,6 +51,7 @@
         <td colspan="4">
             <button class="btn-rna">Convert to RNA</button>
             <button class="btn-reverseComp">Reverse Complement Strand</button>
+            <button class="btn-gcContent">Compute GC Content</button>
         </tr>
         <tr>
             <td><label>Results:</label></td>

@@ -1,21 +1,21 @@
 .vertical-menu {
-  width: 200px; /* Set a width if you like */
+  width: 200px; 
 }
 
 .vertical-menu a {
-  color: pink; /* Black text color */
-  display: block; /* Make the links appear below each other */
-  padding: 12px; /* Add some padding */
-  text-decoration: none; /* Remove underline from links */
+  color: pink; 
+  display: block; 
+  padding: 12px; 
+  text-decoration: none; 
   font-size: 18px;
 }
 
 .vertical-menu a:hover {
-  background-color: #ccc; /* Dark grey background on mouse-over */
+  background-color: #ccc; 
 }
 
 .vertical-menu a.active {
-  background-color: #4CAF50; /* Add a green color to the "active/current" link */
+  background-color: #4CAF50;
   color: white;
 }
 .navbar-nav > li{
